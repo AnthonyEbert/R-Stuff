@@ -1,0 +1,26 @@
+---
+title: "Log book"
+author: "anthony ebert"
+date: "19 October 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Properties of Dagum/Burr distributions
+
+```{r, results = 'hide', message = FALSE}
+library(VGAM)
+library(actuar)
+
+```
+
+```{r}
+curve(ddagum(x, shape1.a = 5, scale = 2, shape2.p = 20), from = 0, to = 30)
+lines(density(1/rburr(1000, shape1 = 20, shape2 = 5, scale = 1/2)))
+```
+
+see [wiki/Dagum_distribution](https://en.wikipedia.org/wiki/Dagum_distribution)
+
